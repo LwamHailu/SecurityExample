@@ -54,10 +54,43 @@
   		<groupId>commons-fileupload</groupId>
   		<artifactId>commons-fileupload</artifactId>
   	</dependency>
+  	
+  	
  	<dependency>
   		<groupId>org.codehaus.jackson</groupId>
   		<artifactId>jackson-mapper-asl</artifactId>
   	</dependency>
+ 
+   <!--jackson dependency  -->
+ <dependency>
+   <groupId>com.fasterxml.jackson.core</groupId>
+   <artifactId>jackson-databind</artifactId>
+   </dependency>
+ 
+ 
+ <!-- Database (H2) -->
+<dependency>
+    <groupId>com.h2database</groupId>
+    <artifactId>h2</artifactId>
+</dependency>
+         
+<!-- DataSource (HikariCP) -->
+<dependency>
+    <groupId>com.zaxxer</groupId>
+    <artifactId>HikariCP</artifactId>
+</dependency>
+ 
+<!-- JPA Provider (Hibernate) -->
+<dependency>
+    <groupId>org.hibernate</groupId>
+    <artifactId>hibernate-entitymanager</artifactId>
+</dependency>
+ 
+<!-- Spring Data JPA -->
+<dependency>
+    <groupId>org.springframework.data</groupId>
+    <artifactId>spring-data-jpa</artifactId>
+</dependency>
  
     	<dependency>
   		<groupId>org.springframework.security</groupId>
@@ -104,7 +137,18 @@
     <artifactId>hibernate-validator</artifactId>
 </dependency>
 
- 
+ <!-- validation -->
+ <dependency>
+    <groupId>javax.validation</groupId>
+    <artifactId>validation-api</artifactId>
+  
+</dependency>
+<dependency>
+    <groupId>org.hibernate</groupId>
+    <artifactId>hibernate-validator</artifactId>
+    
+</dependency>
+
  	<dependency>
   		<groupId>log4j</groupId>
   		<artifactId>log4j</artifactId>
@@ -113,6 +157,8 @@
 		<groupId>org.slf4j</groupId>
 		<artifactId>slf4j-log4j12</artifactId>
 	</dependency>
+	
+	
    </dependencies>
 
      <properties>

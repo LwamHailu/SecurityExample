@@ -1,5 +1,7 @@
 package edu.mum.domain;
 
+import java.util.List;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.validation.constraints.Size;
 
@@ -47,9 +50,20 @@ public class Member {
  	@JoinColumn(name="member_id") 
  	UserCredentials userCredentials;
  	
-  
+	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@JoinColumn(name = "member_ID")
+    private List<Vehicle> vehicle;
+	
+	
+	
  
- 	public Long getId() {
+ 	public List<Vehicle> getVehicle() {
+		return vehicle;
+	}
+	public void setVehicle(List<Vehicle> vehicle) {
+		this.vehicle = vehicle;
+	}
+	public Long getId() {
 		return id;
 	}
 	public void setId(Long id) {

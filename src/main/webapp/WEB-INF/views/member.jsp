@@ -43,7 +43,10 @@
 							<p>Age -         ${member.age}</p>
 							<p>Title -       ${member.title} </p>
 							<p>NUMBER -      ${member.memberNumber} </p>
-
+							
+ 		    <a href="<spring:url value="/vehicle/addvehicle" />"
+			class="btn btn-primary"> <span class=""></span> Add a car
+		</a>
 						</div>
 					</div>
 				</div>
