@@ -88,6 +88,7 @@ public class VehicleController {
 	@RequestMapping(value = "/carmodel", method = RequestMethod.GET)
 	public @ResponseBody List<String> carModel(@RequestParam("carbrand") String carBrand, Model model) {
 
+		
 		model.addAttribute("carModel", vehicleService.getVehicleModel(carBrand));
 		return vehicleService.getVehicleModel(carBrand);
 
@@ -96,10 +97,9 @@ public class VehicleController {
 	@RequestMapping(value = "/addvehicle", method = RequestMethod.POST)
 	public String addCar(@Valid @ModelAttribute("vehicle") Vehicle vehicle, BindingResult result, Model model) {
 		vehicle.setMemberId(1L);
-		int year1 = LocalDate.now().getYear();
+		
 		System.out.println(vehicle.getRegistrationYear());
-		if (result.hasErrors() || vehicle.getRegistrationYear() > year1
-				|| vehicle.getRegistrationYear().toString().length() != 4) {
+		if (result.hasErrors()) {
 
 			return "vehicle";
 
